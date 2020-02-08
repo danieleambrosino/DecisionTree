@@ -1,7 +1,11 @@
 from attributes import DiscreteAttribute, NumericAttribute, GoalAttribute
 
-training_set_file_path = 'datasets/adult.data'
-validation_set_file_path = 'datasets/adult.test'
+reduce_split_points = False
+split_points_threshold = 2
+
+training_set_file_path = 'datasets/adult.training'
+validation_set_file_path = 'datasets/adult.validation'
+test_set_file_path = 'datasets/adult.test'
 
 goal = GoalAttribute(14, 'annual-income', ('<=50K', '>50K'), '>50K')
 
@@ -39,9 +43,3 @@ attributes = (
     )),
     goal
 )
-
-training_set_max_size = 2000
-validation_set_max_size = training_set_max_size // 2
-
-reduce_split_points = True
-split_points_threshold = 2

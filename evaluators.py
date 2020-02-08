@@ -40,12 +40,6 @@ class DiscreteAttributeEvaluator(AttributeEvaluator):
                 remainder += weight * entropy
             return remainder
 
-            # positive_examples_count = len(
-            #     [example for example in self.examples if example[self.goal.index] == self.goal.value])
-            # goal_entropy = self.get_entropy(positive_examples_count / self.examples_count)
-            # attribute_remainder = get_remainder()
-            # return goal_entropy - attribute_remainder
-
         branches = [EqualBranch(value) for value in self.attribute.values]
         node = Node(self.attribute, branches)
         remainder = get_remainder()
