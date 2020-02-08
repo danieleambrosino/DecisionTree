@@ -128,7 +128,6 @@ class DecisionTreeLearner:
                     suitable_examples += 1
                     if rule.postcondition.value == example[self.goal.index]:
                         correct_classifications += 1
-                    # del validation_examples[index]
             if not suitable_examples:
                 return 0
             return correct_classifications / suitable_examples
